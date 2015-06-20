@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aplicativo Nutricao</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+
+    <script type="text/javascript">
+        
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        
+        $(function () {
+            
+            
+            $.ajax({
+                 type: 'GET',
+                 url: "webservice/comida.json",
+                 dataType: 'json',
+                 contentType: 'application/json',
+                 crossDomain: true,
+                 cache: false,
+                 success: function (data) {
+                     
+                     var id_prato =  getParameterByName('prato');
+                     
+                     $.each(data, function (i, prato) {
+
+                         if (prato.prato == id_prato) {
+                         
+                             html = "<img src='" + prato.imagem + "' />";
+                             html += "<h1>" + prato.titulo + "</h1>";
+                             html += "<p>" + prato.name + "</p>";
+                             
+                            $('#descricao').append(html);
+                         }
+
+                     });
+                     
+                     $("#menu").listview("refresh");
+                 },
+                 error: function (jqXHR, textStatus, errorThrown) {
+                     alert('Erro ao carregar os Centro de Custos');
+                     console.log(errorThrown);
+                 }
+             });
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Menu Nutriçao</h1>
+        </div>
+
+        <div data-role="content">
+            <h3>Menu</h3>
+
+            <div id="descricao">
+                
+            </div>
+            <a href="index.html" class="btn">Voltar!</a>
+
+        </div>
+
+        <div data-role="footer">
+            <h1>Rodapé</h1>
+        </div>
+    </div>
+</body>
+
+</html>

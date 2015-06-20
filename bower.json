@@ -5,5 +5,8 @@
     "UnimedVR <suporte@unimedvr.com.br>"
   ],
   "description": "Aplicativo para Nutrição Hospital Unimed Volta Redonda",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jquery-mobile": "~1.4.5"
+  }
 }

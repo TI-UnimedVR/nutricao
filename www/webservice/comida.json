@@ -1,0 +1,18 @@
+[{
+	"prato":1,
+    "titulo": "prato 1",
+	"name":"arroz, feija, batata frita",
+    "imagem": "img/prato-trattoria-coral.png"
+},
+{
+	"prato":2,
+    "titulo": "prato 2",
+	"name":"arroz, feija, batata frita,carne",
+    "imagem": "img/prato-trattoria-coral.png"
+},
+{
+	"prato":3,
+    "titulo": "prato 3",
+	"name":"arroz, feija, batata frita,carne e sei la",
+    "imagem": "img/prato-trattoria-coral.png"
+}]
