@@ -1,0 +1,9 @@
+{
+  "name": "nutricao-app",
+  "version": "0.0.0",
+  "authors": [
+    "UnimedVR <suporte@unimedvr.com.br>"
+  ],
+  "description": "Aplicativo para Nutrição Hospital Unimed Volta Redonda",
+  "license": "MIT"
+}
